@@ -95,7 +95,6 @@ See each skill's **Related Skills** section for the full dependency map.
 | [site-architecture](skills/site-architecture/) | When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal... |
 | [social](skills/social/) | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram,... |
 | [video](skills/video/) | When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. Also use... |
-| [video-ia-higgsfield](skills/video-ia-higgsfield/) | When the user wants to direct, produce, or edit AI video specifically in Higgsfield — cinematic product ads, UGC-style... |
 <!-- SKILLS:END -->
 
 ## Installation

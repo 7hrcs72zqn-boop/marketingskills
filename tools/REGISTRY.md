@@ -84,7 +84,6 @@ Quick reference for AI agents to discover tool capabilities and integration meth
 | wistia | Video | ✓ | - | [✓](clis/wistia.js) | - | [wistia.md](integrations/wistia.md) |
 | heygen | Video | ✓ | ✓ | - | ✓ | [heygen.md](integrations/heygen.md) |
 | hyperframes | Video | - | - | ✓ | ✓ | [hyperframes.md](integrations/hyperframes.md) |
-| higgsfield | Video | ✓ | ✓ | - | - | [higgsfield.md](integrations/higgsfield.md) |
 | trustpilot | Reviews | ✓ | - | [✓](clis/trustpilot.js) | - | [trustpilot.md](integrations/trustpilot.md) |
 | g2 | Reviews | ✓ | - | [✓](clis/g2.js) | - | [g2.md](integrations/g2.md) |
 | onesignal | Push | ✓ | - | [✓](clis/onesignal.js) | ✓ | [onesignal.md](integrations/onesignal.md) |
@@ -274,9 +273,8 @@ Video hosting, creation, and AI generation.
 | **wistia** | Video hosting, marketing analytics | Best for marketing video hosting |
 | **heygen** | AI avatars, talking-head videos | MCP server available |
 | **hyperframes** | Programmatic video from HTML/CSS | Open source, agent-native |
-| **higgsfield** | Cinematic AI video ads, multi-scene story video | MCP server available; images, video, voice, and music in one tool |
 
-**Agent recommendation**: HeyGen for AI avatar videos (MCP-enabled). Hyperframes for templated, data-driven video from code. Higgsfield for cinematic, multi-scene AI video ads directed from a product photo (MCP-enabled) — see the `video-ia-higgsfield` skill. Wistia for hosting and analytics.
+**Agent recommendation**: HeyGen for AI avatar videos (MCP-enabled). Hyperframes for templated, data-driven video from code. Wistia for hosting and analytics.
 
 ### Data Enrichment
 
