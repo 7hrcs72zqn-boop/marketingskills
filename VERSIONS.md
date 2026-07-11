@@ -44,15 +44,8 @@ Current versions of all skills. Agents can compare against local versions to che
 | site-architecture | 2.0.0 | 2026-05-05 |
 | social | 2.0.0 | 2026-05-05 |
 | video | 2.0.1 | 2026-05-18 |
-| video-ia-higgsfield | 1.0.0 | 2026-07-11 |
 
 ## Recent Changes
-
-### video-ia-higgsfield 1.0.0 (2026-07-11)
-
-New skill — Higgsfield-specific AI video director/editor. Covers creative direction (story, exaggerated attribute, visual style), Concept Board / Money Shot, storyboarding, the Higgsfield MCP toolkit (image/video/voice/music generation, Soul ID character consistency, packaged workflows, post-production), Canvas camera movements and scene structure, cost awareness, and headless n8n/API automation for scaled production. Adds `tools/integrations/higgsfield.md`.
-
-Total skills: 41.
 
 ### 2.0.1 (2026-05-18)
 
