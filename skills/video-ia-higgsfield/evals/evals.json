@@ -1,0 +1,55 @@
+{
+  "skill_name": "video-ia-higgsfield",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I have a photo of my water bottle and I want a cinematic ad made with Higgsfield. Just make it look cool.",
+      "expected_output": "Should not generate immediately. Should first check for product-marketing.md, then push back on the vague brief and ask for the three creative-direction essentials: the specific story (not 'an ad for my bottle'), the one attribute to exaggerate, and the visual/audio style, plus platform/length and scene count. Should reference the philosophy that creative direction is what separates a real ad from 'AI slop,' and may propose a concrete story built around the product's strongest attribute (e.g. durability) for the user to confirm rather than generating on a vague brief.",
+      "assertions": [
+        "Checks for product-marketing.md",
+        "Does not generate before defining story, attribute, and style",
+        "Asks for the specific story, not just 'an ad'",
+        "Asks what attribute to exaggerate",
+        "Asks about visual/audio style and platform"
+      ],
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Here's the story: a climber drops the bottle from 800m, it survives. Epic, minimalist style like Patagonia. 8 scenes, vertical for Reels. Let's build it.",
+      "expected_output": "Should structure this into a storyboard: scene-by-scene table with title, prompt, camera movement, and duration, and present it for approval before generating. Should recommend a Concept Board and Money Shot step given this is a high-stakes ad. Should mention checking for a packaged workflow via get_workflow_instructions before defaulting to the manual per-scene pipeline. Should flag cost/resolution tradeoffs (720p draft vs 1080p final) given an 8-scene 1080p project, and should not skip straight to full-resolution batch generation without confirming.",
+      "assertions": [
+        "Produces a structured scene-by-scene storyboard",
+        "Requests approval before generating",
+        "Mentions Concept Board / Money Shot for a high-stakes ad",
+        "Mentions checking get_workflow_instructions for a packaged workflow",
+        "Raises the 720p vs 1080p cost tradeoff for an 8-scene project"
+      ],
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "The first version looks decent but scene 4's transition is jarring and the voice reads too fast. Fix it.",
+      "expected_output": "Should apply surgical fixes, not a full regeneration: regenerate scene 4 specifically (and check whether a frame connector or Soul ID continuity was missing between scenes 3-4), and regenerate only the voice track with more pacing/pauses rather than the whole video. Should not suggest starting over.",
+      "assertions": [
+        "Regenerates only scene 4, not the whole video",
+        "Addresses the jarring transition via frame/character continuity",
+        "Fixes voice pacing without full regeneration",
+        "Does not suggest restarting the project"
+      ],
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "We want to reuse this same bottle ad setup to make a Mother's Day version and, separately, a version aimed at hikers instead of climbers. How fast can we do that?",
+      "expected_output": "Should explain this is the batch/variation strength of the system: reusing the existing product references and Soul ID (if a character is involved) while writing a distinct creative brief (story/attribute/style) for each variant. Should clarify these are still separate storyboards, not just a search-and-replace, and give a realistic timeframe (minutes per variant, not hours) while noting cost scales per additional full generation.",
+      "assertions": [
+        "Identifies this as the batch/audience-variation use case",
+        "Notes reusing product references and Soul ID where applicable",
+        "Insists each variant still needs its own story/attribute/style brief",
+        "Gives a realistic time and cost expectation"
+      ],
+      "files": []
+    }
+  ]
+}
