@@ -184,6 +184,7 @@ Te voy a ir pasando briefs. Tu trabajo:
    > **Excepción:** cuando se use el pipeline `ads-cabrones-ia` (ver abajo), ese skill genera directo en quality HIGH + 2k/1080p — es su propio flujo de una sola aprobación, no el de exploración low-cost.
 5. Por **DEFAULT**, usar Kling 3.0 para video y GPT Image 2 para imagen.
 6. Investigar buenas prácticas de Higgsfield MCP, Seedance y GPT Image 2.
+7. **REGLA FIJA — nunca negociable:** cualquier herramienta que Soe tenga en la mano en una escena de procedimiento (pen tool, lápiz de diseño, demógrafo, etc.) trabaja **siempre sobre la ceja de la clienta, nunca sobre la frente**. Repetir esta restricción en cada prompt de imagen/video de procedimiento, sin importar el instrumento. Ver más errores recurrentes y sus fixes de prompt en `references/lecciones-aprendidas-imagenes.md`.
 
 ---
 

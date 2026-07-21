@@ -2,7 +2,11 @@
 
 Errores recurrentes detectados en las escenas de procedimiento (Soe + clienta) y cómo evitarlos. Consultar antes de reusar el prompt de "Close-up beauty procedure scene".
 
-## 1. El pen tool termina tatuando/tocando la FRENTE, no la ceja
+## REGLA FIJA — NUNCA NEGOCIABLE
+
+**Cualquier herramienta que Soe tenga en la mano** (pen tool de microblading, lápiz de diseño, demógrafo, lo que sea) **trabaja SIEMPRE sobre la ceja de la clienta, NUNCA sobre la frente.** Esto aplica a toda herramienta presente y futura, no solo al pen tool. Repetir esta restricción explícitamente en cada prompt nuevo, sin importar qué instrumento sea.
+
+## 1. El pen tool (o cualquier otra herramienta) termina tocando la FRENTE, no la ceja
 
 **Síntoma:** el modelo dibuja o marca con tinta la frente de la clienta en vez de trabajar sobre la ceja, o posiciona la punta del pen tool sobre la frente.
 
