@@ -181,8 +181,31 @@ Te voy a ir pasando briefs. Tu trabajo:
 2. Generar prompts que respeten la estética Le CliniQ (luxury oscuro, dorado/crema, naturalidad, simetría, resultados realistas de cejas — sin filtro, piel con textura real).
 3. Por **DEFAULT**, generar todo en quality LOW + 1k resolution.
 4. Solo hacer upscale a alta cuando Soe diga "esta me gustó".
+   > **Excepción:** cuando se use el pipeline `ads-cabrones-ia` (ver abajo), ese skill genera directo en quality HIGH + 2k/1080p — es su propio flujo de una sola aprobación, no el de exploración low-cost.
 5. Por **DEFAULT**, usar Kling 3.0 para video y GPT Image 2 para imagen.
 6. Investigar buenas prácticas de Higgsfield MCP, Seedance y GPT Image 2.
+
+---
+
+## SKILL DISPONIBLE — ads-cabrones-ia (pipeline de ads cinematográficos completos)
+
+Instalado en `~/.claude/skills/ads-cabrones-ia` (copia durable en `skills/ads-cabrones-ia/` de este proyecto) y en `references/ads-cabrones-ia-guides/` las guías de setup + caso de estudio.
+
+**Qué hace:** toma 3 inputs (money shot, concept board, creative direction) y genera un comercial completo de punta a punta — imágenes GPT Image 2 (quality high, 2k), videos Seedance 2.0 (1080p, duración variable 4-15s por escena según peso narrativo), voiceover ElevenLabs, música ElevenLabs Music, edición ffmpeg (versión FULL + versión CUTS con arco narrativo), y persistencia en Airtable. 6-8 escenas por default (hasta 12 para storytelling emocional). Una sola aprobación al inicio, después corre todo (~6 min, ~$5-8/ad).
+
+**Cuándo usarlo para Le CliniQ:** cuando se pida un **anuncio/comercial cinematográfico terminado** (no exploración de prompts sueltos) — ej. el spot de la campaña Independencia, un comercial emocional tipo "La Salvadora", o cualquier pieza que necesite voiceover + música + edición lista para publicar. Triggers: "vamos a hacer un ad", "anuncio cinematográfico", "comercial con IA".
+
+**Diferencia con el flujo default de este proyecto:**
+| | Flujo default (arriba) | `ads-cabrones-ia` |
+|---|---|---|
+| Uso | Explorar prompts, iterar rápido | Ad final terminado, listo para publicar |
+| Calidad | LOW + 1k (upscale solo si "esta me gustó") | HIGH + 2k imagen / 1080p video, siempre |
+| Costo | Bajo, por imagen suelta | ~$5-8 por ad completo |
+| Output | Imágenes/clips sueltos | MP4 FULL + CUTS con voz, música y edición |
+
+**Antes de usarlo hay que correr el onboarding wizard** (`scripts/setup.sh` dentro del skill) para capturar `ELEVENLABS_API_KEY`, `AIRTABLE_PAT` y el `voice_id` default — ninguna de esas credenciales está configurada todavía. Ver `references/ads-cabrones-ia-guides/01-instalacion.md`.
+
+**Ajuste pendiente de marca:** el `system/director-creativo.md` del skill es agnóstico de marca/estética por diseño ("no repliques la estética de proyectos previos"). Para Le CliniQ, cada vez que se invoque hay que pasarle explícitamente en el brief la estética dark luxury (dorado `#c9a84c`/crema `#f5f0e8`/oscuro `#0d0c0b`) y las reglas de Ana/Kris de este archivo — el skill no las conoce por sí solo.
 
 ---
 
