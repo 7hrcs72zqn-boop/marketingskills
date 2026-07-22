@@ -75,13 +75,41 @@ Pedirlas de nuevo al usuario si no están en un `.env` local al retomar.
 - Subir a HIGH COST (quality=high, 2k/1080p) solo tras aprobación explícita del usuario.
 - Skill: `ads-cabrones-ia` v2.3 en `../skills/ads-cabrones-ia/`.
 
+## Clips ya generados en la sesión remota (legítimos, listos para usar)
+
+Con la red bloqueada no se pudo armar el MP4 final, pero sí se generaron 10 piezas legítimas
+(sin inventar clientas): 5 clips animados sobre fotos reales del usuario (identidad preservada,
+solo micro-movimiento agregado), 2 clips de Soe (su identidad real vía reference element), y 2
+tarjetas gráficas de texto (sin personas). Detalle completo con URLs y job_ids en
+`/tmp/le-cliniq-libertad-ana/creative/clips_reales.json` de la sesión remota (efímero — si ya no
+existe, hay que regenerar usando los job_ids de abajo como referencia, o descargar directo de
+Higgsfield con `show_generations`/`job_display` por id).
+
+| # | Escena | Fuente | video/image_job | Duración |
+|---|---|---|---|---|
+| 1 | Antes | foto real `c55ebbb5` animada | `7bc25ed7-4d45-4ff7-a86f-4709dfb737cb` | 4s |
+| 2 | Soe en consulta | identidad real de Soe | `9bf15bcf-290b-43d7-b2d2-89939a920277` | 6s |
+| 3 | Diseño 1 | foto real `a3605d1e` animada | `70e04959-f805-40f1-8c9d-9dc0497b5d46` | 4s |
+| 4 | Diseño 2 | foto real `3ba8c863` animada | `bf8c5972-89ac-4143-a63d-21f718f9e41c` | 4s |
+| 5 | Proceso de microblading | **video real sin regenerar** | `a43e857a-87e8-450a-bc5b-98f87dcf7935` | — |
+| 6 | Después | foto real `29a1d6e4` animada | `53ba5706-44df-4ebd-a8a7-1bb144f699a8` | 4s |
+| 7 | Espejo (money shot) | foto real `b9d05ae1` animada | `48124265-3488-44e5-9b16-ebd0f739e185` | 5s |
+| 8 | Soe + CTA urgencia | identidad real de Soe | `76119a41-8d02-478a-a681-d8c995b832d2` | 4s |
+| 9 | Pack Independencia (gráfico) | texto, sin personas | `0e30cd65-d699-4a5a-aba5-b16e3a32d1e5` | 3s (held) |
+| 10 | Contacto final (gráfico) | texto, sin personas | `1ddc321c-2ad0-446e-8f45-85c4b7ffef45` | 2s (held) |
+
+Duración total aprox: ~26s. CTA de escena 8 (agregar como texto en post, no está grabado en
+audio): **"Últimos cupos disponibles antes de cerrar agenda de Julio"**.
+
 ## Próximos pasos al retomar en local
 
-1. Confirmar con el usuario las descripciones pendientes de assets (arriba).
-2. Replantear el guion de escenas usando SOLO assets reales confirmados — tratar como reel
-   documental/testimonial de varias clientas reales, no una sola persona ficticia.
-3. Descargar fotos/video reales desde Higgsfield CDN (funciona en local).
-4. Animar con `motion_control` (Kling 3.0) usando el video real `a43e857a` como referencia de
-   movimiento sobre las fotos reales, si se necesita movimiento sutil.
-5. Voiceover ElevenLabs (voz de Soe) + música ElevenLabs Music.
-6. Edición ffmpeg FULL + CUTS (funciona en local).
+1. Confirmar con el usuario las descripciones pendientes de assets aún sin usar (arriba: 3 fotos +
+   5 videos) — puede que quieran sumar más escenas con esos.
+2. Descargar los 10 clips/imágenes de la tabla de arriba desde Higgsfield (por job_id, con
+   `job_display` o directo de la URL) — funciona en local.
+3. Concatenar en orden con ffmpeg (imágenes 9 y 10 como held frame con `zoompan`/`loop`).
+4. Voiceover ElevenLabs (voz de Soe) leyendo el script completo + música ElevenLabs Music
+   (dark luxury, ~26-30s).
+5. Mezclar audio (SFX nativo 0.3 + voz 1.0 + música 0.5) y exportar MP4 final.
+6. Si el usuario quiere sumar los assets pendientes de confirmar, regenerar/incorporar esas
+   escenas antes del paso 3.
